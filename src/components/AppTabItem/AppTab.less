@@ -1,0 +1,36 @@
+@import url('src/styles/styles');
+
+@icon-size: 2em;
+.AppTab {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    user-select: none;
+    padding: 0.6em 1em;
+    border-radius: @default-border-radius;
+
+    color: @secondary-text;
+
+    .TabIcon {
+        padding: 10px;
+        display: inline-block;
+
+        .IconImage {
+        }
+    }
+
+    .TabName {
+        .headline1();
+        color: white;
+    }
+
+    &:hover {
+        background-color: @primary-hover;
+    }
+}
+
+.AppTabSelected {
+    background-color: @secondary;
+}
+
+

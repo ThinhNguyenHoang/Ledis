@@ -1,0 +1,72 @@
+@import "src/styles/styles";
+
+
+.TerminalContainer {
+    display: flex;
+    flex-direction: column;
+    width: clamp(600px, 70%, 1500px);
+    margin: 4em;
+    background-color: #282828;
+    border: 2px solid @blue-400;
+    justify-content: center;
+
+    .TerminalDisplay {
+        height: 600px;
+        width: 100%;
+        .headline1();
+        overflow-y: scroll;
+    }
+
+    .Prompter {
+        display: flex;
+        align-items: center;
+        background: #fff;
+        border: 1px solid #a0a0a0;
+        border-radius: 4px;
+        padding-left: 0.5rem;
+        overflow: hidden;
+        font-family: sans-serif;
+        //background-color: #00ACC1;
+        &:focus-within {
+            border: 3px solid @black-darker;
+        }
+
+        #PromptLabel {
+            .headline1();
+            color: #999;
+        }
+
+        #PromptInput {
+            border: none;
+            outline: none;
+            flex-grow: 1;
+            min-height: 4em;
+            .headline4();
+        }
+
+        #CommandSendButton {
+            height: 100%;
+            padding: 0 2em;
+            background-color: @primary;
+            color: @white-darker;
+            font-weight: bolder;
+            border-radius: 0 0 0 1em;
+        }
+    }
+
+    .UserInputErrorContainer {
+        display: flex;
+        margin: 2em 0;
+        padding-left: .6em;
+        justify-content: space-between;
+
+        .UserInputErrorText {
+            .headline3(@red-700);
+        }
+
+        .DeleteIcon {
+            margin-right: 1em;
+            .delete-icon();
+        }
+    }
+}

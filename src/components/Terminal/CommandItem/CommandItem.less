@@ -1,0 +1,29 @@
+@import "src/styles/styles";
+
+.CommandItemContainer {
+    color: white;
+    margin: 1em;
+
+    .CommandItem {
+        .CommandCaret {
+
+        }
+
+        .Command {
+            display: inline-block;
+
+            .CommandName {
+                color: @terminal-command-name-color;
+            }
+
+            .CommandParameters {
+                color: @terminal-command-argument-color;
+            }
+        }
+    }
+
+    .CommandResult {
+        margin-top: .3em;
+        overflow-wrap: break-word;
+    }
+}
