@@ -1,7 +1,9 @@
+import InConstructionPage from "../UtilPages/InConstructionPage";
+
 const SnapshotPage = () => {
 
     return (
-        <div></div>
+        <InConstructionPage/>
     )
 }
 

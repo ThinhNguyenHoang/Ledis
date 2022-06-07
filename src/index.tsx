@@ -6,6 +6,8 @@ import {RouterConfig} from "./navigation/RouterConfig";
 import {Provider} from "react-redux";
 import {store} from "./redux/store/store";
 import API_CONSTANT from "./constants/apiContants";
+import {ToastContainer} from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 const root = ReactDOM.createRoot(
     document.getElementById("root") as HTMLElement
@@ -19,6 +21,7 @@ root.render(
             <BrowserRouter>
                 <RouterConfig/>
             </BrowserRouter>
+            <ToastContainer/>
         </Provider>
     </React.StrictMode>
 );

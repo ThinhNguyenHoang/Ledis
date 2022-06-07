@@ -1,15 +1,14 @@
-import './NotFoundPage.less';
-import {useNavigate} from "react-router-dom";
 import ROUTING_CONSTANTS from "../../navigation/routes";
+import {useNavigate} from "react-router-dom";
+import "./InConstructionPage.less";
 
-const NotFoundPage = () => {
+const InConstructionPage = () => {
 
     const navigate = useNavigate();
 
     return (
         <>
-            <h1>404 Error Page #2</h1>
-            <p className="zoom-area">The page is currently unavailable</p>
+            <p className="zoom-area" style={{marginTop:"3em"}}> The feature is in construction</p>
             <section className="error-container">
                 <span className="four"><span className="screen-reader-text">4</span></span>
                 <span className="zero"><span className="screen-reader-text">0</span></span>
@@ -23,6 +22,6 @@ const NotFoundPage = () => {
             </div>
         </>
     )
-};
+}
 
-export default NotFoundPage;
+export default InConstructionPage;

@@ -1,7 +1,8 @@
+import InConstructionPage from "../UtilPages/InConstructionPage";
+
 const HistoryPage = () => {
     return (
-        <div>
-        </div>
+        <InConstructionPage/>
     )
 }
 

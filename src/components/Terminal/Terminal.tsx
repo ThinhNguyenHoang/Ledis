@@ -3,15 +3,13 @@ import './Terminal.less';
 import {useAppDispatch, useAppSelector} from "../../hooks/redux/hooks";
 import {
     clearUserInputError,
-    TerminalCommand,
     terminalSelector,
-    terminalSlice
 } from "../../redux/features/Terminal/TerminalSlice";
 import CommandItem from "./CommandItem/CommandItem";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCircleXmark} from "@fortawesome/free-solid-svg-icons/faCircleXmark";
-import {useTestEndpointQuery} from "../../redux/features/Terminal/TerminalApi";
 import {useEffect, useRef} from "react";
+import {toast} from "react-toastify";
 
 // const testCommands: TerminalCommand[] = [
 //     {
@@ -44,6 +42,22 @@ const Terminal = () => {
             ref.current.scrollTop = ref.current.scrollHeight;
         }
     }, [commandLogs])
+
+    useEffect(() => {
+        if (userInputError) {
+            toast.error(`${userInputError}`, {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            });
+
+            dispatch(clearUserInputError());
+        }
+    }, [userInputError])
     return (
         <div className={"TerminalContainer"}>
             <div className={"TerminalDisplay"} ref={ref}>
@@ -54,15 +68,15 @@ const Terminal = () => {
                 }
             </div>
             <Prompter/>
-            {userInputError && <div className={"UserInputErrorContainer"}>
-                <span className={"UserInputErrorText"}>
-                {userInputError}
-                </span>
-                <FontAwesomeIcon className={"DeleteIcon"} icon={faCircleXmark} onClick={() => {
-                    dispatch(clearUserInputError());
-                }
-                }/>
-            </div>}
+            {/*{userInputError && <div className={"UserInputErrorContainer"}>*/}
+            {/*    <span className={"UserInputErrorText"}>*/}
+            {/*    {userInputError}*/}
+            {/*    </span>*/}
+            {/*    <FontAwesomeIcon className={"DeleteIcon"} icon={faCircleXmark} onClick={() => {*/}
+            {/*        dispatch(clearUserInputError());*/}
+            {/*    }*/}
+            {/*    }/>*/}
+            {/*</div>}*/}
         </div>
     )
 }

@@ -8,6 +8,7 @@ import {
 } from "../../redux/features/Terminal/TerminalSlice";
 import {useAppDispatch} from "../../hooks/redux/hooks";
 import {useExecuteCommandMutation} from "../../redux/features/Terminal/TerminalApi";
+import Button from "../Button/Button";
 
 
 const Prompter = () => {
@@ -60,10 +61,10 @@ const Prompter = () => {
                    onChange={(e) => setCommand(e.target.value.toUpperCase())}
                    onKeyDown={handleKeyPress}
             />
-            <button id={"CommandSendButton"} onClick={() => {
+            <Button id={"CommandSendButton"} title={"SEND"} onClick={() => {
                 handleSubmit();
-            }}>SEND
-            </button>
+            }}>
+            </Button>
         </div>
     )
 }
